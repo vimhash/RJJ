@@ -1,0 +1,32 @@
+<body>
+    <div class="screen-centered-lc">
+        <div class="screen-left-column">
+            <div class="caption tiled title" style="margin-top: 50px">CSS3<br/>transformaciones,<br/>transiciones<br/>y animaciones</div>
+            <div class="caption tiled" style="margin-top: 390px;">CLICK en las<br />fichas!</div>
+        </div>
+        <div class="screen-main-container-lc">
+            <div class="caption tiled" style="left:10px; top:10px">slide</div>
+            <div class="caption tiled" style="left:290px; top:10px">slide with cubic BEZIER speed</div>
+            <div class="caption tiled" style="left:570px; top:10px">slide with OPACITY</div>
+            <div class="caption tiled" style="left:10px; top:290px">ROTATE</div>
+            <div class="caption tiled" style="left:290px; top:290px">rotateX</div>
+            <div class="caption tiled" style="left:570px; top:290px">rotate with modified ORIGIN</div>
+            <div class="caption tiled" style="left:10px; top:570px">scaling ANIMATION with keyframe</div>
+            <div class="caption tiled" style="left:290px; top:570px">skew ANIMATION with keyframe</div>
+            <div class="caption tiled" style="left:570px; top:570px; TranslateZ(-200px)">3D rotate</div>
+
+            <!-- tiles -->
+            <img class="movable begin contenedor" (click)="move('tile_user')" id="tile_user" src="../../assets/images/tile_user.png"/>
+            <img class="movable begin" (click)="move('tile_console')"id="tile_console" src="../../assets/images/tile_console.png" />
+            <img class="movable begin" (click)="move('tile_browser')" id="tile_browser" src="../../assets/images/tile_browser.png"/>
+            <img class="movable begin" (click)="move('tile_usb')" id="tile_usb" src="../../assets/images/tile_usb.png"/>
+            <img class="movable begin" (click)="move('tile_phone')" id="tile_phone" src="../../assets/images/tile_phone.png"/>
+            <img class="movable begin" (click)="move('tile_game')" id="tile_game" src="../../assets/images/tile_game.png"/>
+            <img class="movable" (click)="move('tile_computer')" id="tile_computer" src="../../assets/images/tile_computer.png"/>
+            <img class="movable" (click)="move('tile_world')" id="tile_world" src="../../assets/images/tile_world.png"/>
+            <div class="movable begin" id="tile_bberry" (click)="move('tile_bberry')">
+                <img src="../../assets/images/tile_bberry.png" />
+            </div>
+        </div>
+    </div>
+</body>
