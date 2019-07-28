@@ -1,0 +1,9 @@
+@import "../../scss/mixins";
+
+body
+{
+    @include body;
+    @include caption_decorations;
+    @include posicion_pantalla;
+    @include demo3_style;
+}
