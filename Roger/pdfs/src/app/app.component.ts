@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import  JsPDF from 'JsPdf'
+import jsPDF from 'jspdf';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,7 +28,7 @@ export class AppComponent {
     let margende= 25
     let anchouso= anchoTotal-margeniz-margende
    let altouso=altoTotal-margenSup-margeninf
-   let doc = new JsPDF({
+   let doc = new jsPDF({
      orientacion : 'L', //l o p
      unit:'mm',
      format:'a4',
@@ -37,7 +37,7 @@ export class AppComponent {
      
    })//espaciado de parrafos dinamico
    doc.setFontSize(size);
-    for(let i=0;i<=19;i++){
+    for(let i=0;i<=20;i++){
       var lineas = doc.splitTextToSize(texto,anchouso);
       console.log(lineas.length)
       if(y==25){
@@ -55,9 +55,10 @@ export class AppComponent {
           doc.text(lineas, x, y)
           y+=altoParrafo
           doc.addPage()
-        }else{}
-           doc.text(lineas, x, y)
-            y+=altoParrafo
+        }else{
+          doc.text(lineas, x, y)
+          y+=altoParrafo
+        }
         }
       }
 
