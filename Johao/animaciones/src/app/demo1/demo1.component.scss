@@ -2,68 +2,10 @@
 
 body
 {
-    @include body;
+	@include body;
+	@include caption_decorations;
+	@include posicion_pantalla;
 }
-
-//STYLE - BEGIN
-.screen-centered-lc /*centered with left column*/
-{
-    position: absolute;
-    top: 50%;
-    left: 0px;
-    width: 100%;
-    min-width: 1140px; /* 850 + 290 */
-    height: 850px;
-    margin-top: -425px;
-}
-
-.screen-left-column
-{
-    float: left;
-    min-width: 290px;
-    width: 25%;
-    margin: 0px;
-    height: 100%;
-}
-
-.caption
-{
-    margin: 10px;
-    font-size: xx-large;
-    font-style: normal;
-    font-variant: small-caps;
-    font-family: sans-serif;
-    font-weight: 900;
-    color: white;
-    text-shadow: 3px 3px 5px rgb(100, 100, 130), -3px -3px 5px rgb(100,100,130), 3px -3px 5px rgb(100,100,130), -3px 3px 5px rgb(100,100,130);
-}
-
-div.tiled
-{
-    position: absolute;
-    margin: 10px;
-    margin-top: 100px;
-    width: 270px;
-    height: 160px;
-
-    text-align: center;
-}
-
-.title
-{
-    text-align: left;
-    font-size: 40px;
-    text-shadow: 3px 3px 5px rgb(130, 100, 100), -3px -3px 5px rgb(130,100,100), 3px -3px 5px rgb(130,100,100), -3px 3px 5px rgb(130,100,100);
-}
-
-.screen-main-container-lc /* centered with left column*/
-{
-    display: inline-block;
-    position: relative;
-    height: 100%;
-    width: 850px;
-}
-//STYLE - END
 
 //STYLESHEET - BEGIN
 .movable
