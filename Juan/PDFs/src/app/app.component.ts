@@ -47,10 +47,10 @@ export class AppComponent {
       }else if(x<anchoUso){
         anchoParrafo = Math.ceil(dim)+(textSize*0.3515)*interlineado;
         if((x+anchoParrafo)<anchoUso){
-          doc.text(espacio,x,y,{maxWidth:50},anchoParrafo)
+          doc.text(espacio,x,y,{maxWidth:ancho},anchoParrafo)
           x+=anchoParrafo
         }else{
-          doc.text(espacio,x,y,{maxWidth:50})
+          doc.text(espacio,x,y,{maxWidth:ancho})
           x+=anchoParrafo
           doc.addPage()
           y=25
