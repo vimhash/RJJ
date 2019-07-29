@@ -17,7 +17,7 @@ export class AppComponent {
     let  x=25;
     let y=25;
    const sizeMilimetros=  0.3515; //valor por cada punto
-   let  size=16;
+   let  size=15;
    const interlineado=1;
    let texto='AnimeFLV.NET, tiene como objetivo brindarte un amplio catálogo de animes que no son transmitidos en los canales de TV en señal abierta, teniendo como fin el compartir con todos nuestros seguidores la mayor cantidad de episodios y series anime que salen cada año . Conocemos nuestras   limitaciones y es por ello que siempre intentamos innovar   en la calidad del servicio, tratamos mes a mes de hacer   alianzas comerciales con las mejores empresas a modo de   poder brindarte una mejor experiencia y evolucionar como   plataforma para así muy pronto visualizar vídeos de  Anime Online de manera Legal.'
     let anchoTotal=210
