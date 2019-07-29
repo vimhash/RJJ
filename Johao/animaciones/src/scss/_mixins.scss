@@ -92,23 +92,16 @@
     }
 }
 
-@mixin demo1_style 
+@mixin img9($rotateY, $rotateX, $rotateZ) 
 {
-    .movable
-    {
-        position: absolute;
-    }
-
     //9
     #tile_bberry
     {
         transition: 1000ms ease-out;
         transition-property: all;
         transform-style: preserve-3d;
-        /*background-color: red;*/ /* uncomment to show background - makes understanding easier*/
         height: 270px; /* bad: chrome adds 4 stray pixels without this */
     }
-
     #tile_bberry.begin
     {
         left: 570px;
@@ -118,13 +111,18 @@
     {
         left: -280px;
         top: 10px;
-        transform: rotateY(180Deg) rotateX(360Deg) rotateZ(180Deg);
+        // transform: rotateY(180Deg) rotateX(360Deg) rotateZ(180Deg);
+        transform: rotateY($rotateY) rotateX($rotateX) rotateZ($rotateZ);
     }
     #tile_bberry img
     {
         position: relative;
     }
+}
 
+@mixin animations 
+{
+    @include img9(180Deg,360Deg,180Deg);
     //8
     #tile_world
     {
@@ -354,12 +352,21 @@
     }
 }
 
+@mixin demo1_style 
+{
+    .movable
+    {
+        position: absolute;
+    }
+    @include animations;
+}
+
 @mixin demo2_style 
 {
     .stage
     {
         perspective: 1000px;
-        /* perspective-origin: 50% 50%;*/ /* this is the default*/
+        perspective-origin: 50% 50%; /* this is the default*/
         transform-style: preserve-3d;
     }
     .stage2

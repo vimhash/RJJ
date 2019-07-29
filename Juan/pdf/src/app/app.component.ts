@@ -17,7 +17,6 @@ export class AppComponent {
   pdf(){
     let x = 25
     let y = 25
-    //let textoArray=['jose','juan','lenin','Paola']
     let altoTotal=290
     let anchoTotal=210
     const marDer=25
@@ -29,7 +28,7 @@ export class AppComponent {
     let altoUso=altoTotal-marSup-marInf
     let textSize=16
     let ancho=50
-    let texto='El gigante del dance belga es, sin duda, el emperador de Europa y cada año atrae a amantes de la música electrónica de todo el mundo con sus famosos escenarios, producción visual y un cartel a rebosar de grandes nombres desde EDM hasta hardstyle. El festival ha organizado otros eventos en los cinco continentes, pero la fiesta original en la ciudad de Boom será siempre la más característica.'
+    let texto1='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularasddddsdsd.'
     let doc=new jsPDF({
       orientation:'P',
       unit:'mm',
@@ -38,7 +37,7 @@ export class AppComponent {
     })
     doc.setFontSize(textSize);
     for(let i=0;i<=20;i++){
-      let espacio = doc.splitTextToSize(texto,altoUso);
+      let espacio = doc.splitTextToSize(texto1,altoUso);
       if(x==25){
         doc.text(espacio,x,y,{maxWidth:ancho},interlineado)
         var dim = doc.getStringUnitWidth('espacio')*textSize;
@@ -80,6 +79,6 @@ export class AppComponent {
     //     }
     //   }
     // }
-  doc.save('juanPDF.pdf')
+  doc.save('parrafoPDF.pdf')
   }
 }

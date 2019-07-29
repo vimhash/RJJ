@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import jsPDF from 'jsPDF';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
 @Component({
   selector: 'app-tablas',
   templateUrl: './tablas.component.html',
@@ -7,10 +9,63 @@ import jsPDF from 'jsPDF';
 })
 export class TablasComponent implements OnInit {
   docPdf: jsPDF;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  dataObjetos =
+  [
+    {
+      id: "1",
+      nombre: "Johao",
+      apellido: "Perlaza",
+      direccion: "Av. Pichincha",
+      ciudad: "Quito",
+      barrio: "San Blas"
+    },
+    {
+      id: "1",
+      nombre: "Johao",
+      apellido: "Perlaza",
+      direccion: "Av. Pichincha",
+      ciudad: "Quito",
+      barrio: "San Blas"
+    },
+    {
+      id: "1",
+      nombre: "Johao",
+      apellido: "Perlaza",
+      direccion: "Av. Pichincha",
+      ciudad: "Quito",
+      barrio: "San Blas"
+    },
+    {
+      id: "1",
+      nombre: "Johao",
+      apellido: "Perlaza",
+      direccion: "Av. Pichincha",
+      ciudad: "Quito",
+      barrio: "San Blas"
+    },
+    {
+      id: "1",
+      nombre: "Johao",
+      apellido: "Perlaza",
+      direccion: "Av. Pichincha",
+      ciudad: "Quito",
+      barrio: "San Blas"
+    },
+    {
+      id: "1",
+      nombre: "Johao",
+      apellido: "Perlaza",
+      direccion: "Av. Pichincha",
+      ciudad: "Quito",
+      barrio: "San Blas"
+    }
+  ]
   
   pdf() {
     let textSize=10;
@@ -21,49 +76,28 @@ export class TablasComponent implements OnInit {
     let margeniz=25
     let margende= 25
     let anchouso= anchoTotal-margeniz-margende
-   let altouso=altoTotal-margenSup-margeninf
-    let  x=25;
+    let altouso=altoTotal-margenSup-margeninf
+    let x=25;
     let y=25;
+
     let doc = new jsPDF({
-      orientation: 'P',
+      orientation: 'landscape',
       unit: 'mm',
       format: 'A4',
       compress: true,
     })
-    doc.setFontSize(textSize);
-    var headers = this.crear(["id", "instituto", "level", "telefono", "maquina", "vlt"]);
-    doc.setFontStyle('normal');
-    doc.setTextColor(55, 0, 0);
-    doc.setFontStyle("italic")
-    doc.table(1,1,this.generardata(100), headers,{ autoSize: true });
-   doc.save('juanPDF.pdf')
+    // doc.setFontSize(textSize);
+    // var headers = ["id", "nombre", "apellido", "direccion", "ciudad", "barrio"];
+    // doc.setFontStyle('normal');
+    // doc.setTextColor(55, 0, 0);
+    // doc.setFontStyle("italic")
+    // doc.table(x,y,this.dataArray, headers, object);
+    // doc.save('tablasPDF.pdf')
+    var headers = {id: "id",nombre: "nombre",apellido: "apellido",direccion: "direccion",ciudad: "ciudad",barrio: "barrio"};
+    doc.autoTable({
+      head: [headers],
+      body: this.dataObjetos, colSpan: 2, rowSpan: 2, styles: {halign: 'center'},
+    })
+    doc.save('tablasPDF.pdf')
   }
-  generardata(n){
-    var result=[];
-    var data={
-      id: "0",
-      instituto: "Benito Juarez",
-      level: "3Ro DS",
-      telefono: "0990745612",
-      maquina: "20485861",
-      vlt: "0"
-    };
-    for(var i=0;i<n;i++){
-      result.push(Object.assign({}, data));
-      data.id = (i + 1).toString();
-    }
-    return result;
-  }
-  crear(llave){
-    var result = [];
-    for (var i = 0; i < llave.length; i += 1) {
-        result.push({
-        'id' : llave[i],
-            'name': llave[i],
-            'prompt': llave[i],
-        });
-    }
-    return result;
-  }
-
 }
